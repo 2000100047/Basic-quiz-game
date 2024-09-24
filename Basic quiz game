@@ -1,0 +1,30 @@
+# Simple Quiz Game
+
+def quiz_game():
+    # List of questions and their corresponding answers
+    questions = [
+        {"question": "What is the capital of France?", "answer": "Paris"},
+        {"question": "What is 5 + 7?", "answer": "12"},
+        {"question": "What is the largest planet in our solar system?", "answer": "Jupiter"},
+        {"question": "What language is this quiz written in?", "answer": "Python"}
+    ]
+
+    score = 0  # Player's score
+
+    # Loop through each question
+    for i, q in enumerate(questions, 1):
+        print(f"Question {i}: {q['question']}")
+        user_answer = input("Your answer: ")
+
+        # Check if the answer is correct
+        if user_answer.strip().lower() == q['answer'].lower():
+            print("Correct!")
+            score += 1
+        else:
+            print(f"Wrong! The correct answer was {q['answer']}.")
+
+    # Final score
+    print(f"\nYou got {score} out of {len(questions)} questions correct!")
+
+# Start the quiz game
+quiz_game()
